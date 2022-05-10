@@ -1,4 +1,4 @@
-NAME	= iter
+NAME	= array
 FILES	= main.cpp
 OBJ		= $(FILES:%.cpp=%.o)
 CC		= clang++
