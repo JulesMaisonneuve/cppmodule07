@@ -9,7 +9,7 @@ void fill_array(T & array)
 template<typename T>
 void print_array(T & array)
 {
-    std::cout << array << std::endl;
+    std::cout << array;
 }
 
 int main(void)
@@ -18,5 +18,6 @@ int main(void)
     // iter(tab, 3, &print_array);
     iter(tab, 3, &fill_array);
     iter(tab, 3, &print_array);
+    std::cout << std::endl;
     return (0);
 }

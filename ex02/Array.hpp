@@ -13,7 +13,7 @@ class Array
 		Array(void)
 		{
 			this->tab_size = 0;
-			this->array = new T[0];
+			this->array = NULL;
 		}
 		Array(unsigned int n)
 		{
@@ -24,20 +24,18 @@ class Array
 		{
 			if (this == other)
 				return (*this);
-			// if (this->array)
-			// 	delete this->array;
-			// this->tab_size = other.tab_size;
-			// this->array = new Array(*(other.array));
+			this->tab_size = other.tab_size;
 			this->array = new T[this->tab_size];
 			for (unsigned int i = 0; i < this->tab_size; i++)
 				this->array[i] = other.array[i];
 			return (*this);
 		}
-		Array(const Array &other)
+		Array(const Array &other) : array(NULL)
 		{
-			// this->tab_size = other.tab_size;
-			// this->array = new Array(*(other.array));
-			*this = other;
+			this->tab_size = other.tab_size;
+			this->array = new T[this->tab_size];
+			for (unsigned int i = 0; i < tab_size; ++i)
+				array[i] = other.array[i];
 		}
 		T &operator[](unsigned int index)
 		{
